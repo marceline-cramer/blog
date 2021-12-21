@@ -1,0 +1,34 @@
+base_url = "https://marceline-cramer.github.io/blog/"
+title = "based blog"
+description="placeholder description"
+default_language = "en"
+generate_feed = true
+compile_sass = true
+build_search_index = true
+theme = "zerm"
+
+taxonomies = [
+    { name = "tags" },
+    { name = "categories" },
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "axar"
+
+[extra]
+# Put all your custom variables here
+author = ""
+show_author = false
+show_categories = true
+show_tags = true
+theme_color = "orange"
+show_menu_items = 5
+full_width = false
+center = true
+logo_text = "based blog"
+main_menu = []
+read_more = "show more"
+read_other_posts = "read other posts"
+enable_katex = true
+disqus = { enabled=false, short_name="" }
