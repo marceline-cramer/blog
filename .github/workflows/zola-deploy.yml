@@ -15,4 +15,4 @@ jobs:
         uses: shalzz/zola-deploy-action@v0.14.1
         env:
           PAGES_BRANCH: gh-pages
-          TOKEN: $GITHUB_ACTOR:${{ secrets.TOKEN }}
+          TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}
