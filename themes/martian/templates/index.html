@@ -27,6 +27,10 @@
 
         {{config.description}}
 
+        {% if config.generate_feed -%}
+          <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">Atom feed</a>
+        {% endif -%}
+
         <div class="buttons">
           <img src="/assets/d3.gif">
           <img src="/assets/gplv3.gif">
@@ -44,12 +48,10 @@
       <div class="footer">
         {% block footer -%}
           theme: martian<br>
+          author: <a href="https://github.com/marceline-cramer">Marceline Cramer</a><br>
           font: <a href="https://madmalik.github.io/mononoki/">mononoki</a><br>
           © 2022 Marceline Cramer<br>
         {% endblock footer -%}
-        {% if config.generate_feed -%}
-          <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">Atom feed</a>
-        {% endif -%}
       </div>
     </div>
 
