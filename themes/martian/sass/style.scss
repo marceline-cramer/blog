@@ -4,7 +4,6 @@
   --background: black;
   --foreground: white;
   --accent: red;
-  --opacity: 1.0;
 }
 
 // Tokyo Night
@@ -49,7 +48,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 2em 0 0.5em 0;
+  margin: 20px 0 0.5em 0;
   border-bottom: 1px solid var(--accent);
   font-weight: bold;
 
@@ -99,6 +98,7 @@ a:active {
   margin: 0;
   margin-bottom: 20px;
   width: 100%;
+  text-align: center;
 }
 
 .toc {
@@ -132,7 +132,6 @@ table, th, td {
 .container, .sidebar-left, .sidebar-right {
   background: var(--background);
   border: 3px solid var(--accent);
-  opacity: var(--opacity);
   display: flex;
   flex-direction: column;
 }
@@ -140,7 +139,7 @@ table, th, td {
 .container {
   max-width: 864px;
   min-height: 100vh;
-  padding: 40px;
+  padding: 20px 40px;
   margin: 0 auto;
 }
 
@@ -160,13 +159,11 @@ table, th, td {
 
 .sidebar-right {
   float: right;
-
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
+  flex-direction: column;
 
   img {
-    // width: 150px;
-    // margin: 0 auto;
+    // height: 50px;
+    margin: 5px auto;
+    border: 1px solid var(--accent);
   }
 }

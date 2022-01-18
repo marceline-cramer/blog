@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
   <head>
+    <meta charset="UTF-8">
     {%- block title -%}
       <title>{{ config.title }}</title>
     {%- endblock title -%}
@@ -15,22 +16,28 @@
 
     <div class="sidebar-right">
       {%- block sidebar_right -%}
+        <h1 class="post-title">
+          <a href="{{ config.base_url }}">{{ config.title }}</a>
+        </h1>
+
+        {{config.description}}
+
         <img src="https://sadgrl.online/images/homepage/nft.gif">
         <img src="https://anlucas.neocities.org/penguin.gif">
         <img src="https://sadgrl.online/images/homepage/noweb32webp.webp">
+        <img src="https://boodlebox.neocities.org/d3.gif">
+        <img src="https://anlucas.neocities.org/lilrib.gif">
       {%- endblock sidebar_right -%}
     </div>
 
     <div class="container">
-      <div class="header">
+      {# <div class="header">
         <a href="{{ config.base_url }}">~~~ {{ config.title }} ~~~</a>
         <p style="font-size:1.5rem;">
           {{ config.description }}
           <br>
-          {%- block article_info -%}
-          {%- endblock article_info -%}
         </p>
-      </div>
+      </div> #}
 
       {%- block main -%}
         <h1>Posts</h1>

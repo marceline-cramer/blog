@@ -6,19 +6,15 @@
   <title>{{ page.title }}</title>
 {%- endblock title -%}
 
-{%- block article_info -%}
-  {{ posts::meta(page=page) }}
-  {% if page.taxonomies.categories -%}
-    categories: {
-    {{ taxonomies::list_taxonomies(taxonomies=page.taxonomies.categories, kind="categories", separator=",") }}}
-  {% endif -%}
-{%- endblock article_info -%}
-
 {%- block sidebar_left -%}
   <h1 class="post-title">
     <a href="{{ page.permalink }}">{{ page.title }}</a>
   </h1>
   {{ posts::meta(page=page) }}
+  {# % if page.taxonomies.categories -%}
+    categories: 
+    {{ taxonomies::list_taxonomies(taxonomies=page.taxonomies.tags, kind="tags", separator=",") }}
+  {% endif -% #}
   <div class="toc">
     <ol type="1">
       {% for h1 in page.toc %}
@@ -41,12 +37,6 @@
 
 {%- block main -%}
   <article class="post">
-    <header>
-      <h1 class="post-title">
-        <a href="{{ page.permalink }}">{{ page.title }}</a>
-      </h1>
-
-      {{ page.content | safe }}
-    </header>
+    {{ page.content | safe }}
   </article>
 {%- endblock main -%}
