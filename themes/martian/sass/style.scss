@@ -1,3 +1,27 @@
+// TiB
+:root {
+  --background-image: url("assets/tib_bg.jpg");
+  --background: black;
+  --foreground: white;
+  --accent: red;
+  --opacity: 1.0;
+}
+
+// Tokyo Night
+/*:root {
+  --background-image: url("assets/tokyo_night_bg.png");
+  --opacity: 0.9;
+  --background: #1a1b26;
+  --foreground: #acb0d0;
+  --accent: #a9b1d6;
+}*/
+
+// Tokyo Night Storm
+/*:root {
+  --background: #24383b;
+  --foreground: #9699a8;
+}*/
+
 @font-face {
   font-family: Mononoki;
   src: url("assets/mononoki-Regular.ttf") format("ttf"),
@@ -6,27 +30,27 @@
 }
 
 ::selection {
-  color: white;
-  background: red;
+  color: var(--foreground);
+  background: var(--accent);
 }
 
 ::-moz-selection {
-  color: white;
-  background: red;
+  color: var(--foreground);
+  background: var(--accent);
 }
 
 body {
-  background: url("assets/bg.png");
-  background-color: black;
+  background: var(--background-image);
+  background-color: var(--background);
+  color: var(--foreground);
   background-attachment: fixed;
   font-family: Mononoki;
-  font-size: 1rem;
-  color: white;
+  font-size: 1.2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em 0;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--accent);
   font-weight: bold;
 
   a {
@@ -40,7 +64,7 @@ ol {
 }
 
 a:link {
-  color: white;
+  color: var(--foreground);
 }
 
 a:visited {
@@ -48,12 +72,12 @@ a:visited {
 }
 
 a:hover {
-  color: red;  
+  color: var(--accent);
   // text-decoration: underline;
 }
 
 a:active {
-  color: red;
+  color: var(--accent);
   // text-decoration: underline;
 }
 
@@ -72,17 +96,29 @@ a:active {
 }
 
 blockquote {
-  background: solid black;
-  border: 2px dotted white;
+  background: solid var(--background);
+  border: 2px dotted var(--accent);
   padding: 15px;
 }
 
 code {}
 
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 40px 0;
+}
+
+table, th, td {
+  border: 2px dotted var(--accent);
+  padding: 10px;
+}
+
 .container, .sidebar-left, .sidebar-right {
-  background: black;
-  border: 3px solid red;
-  opacity: 0.9;
+  background: var(--background);
+  border: 3px solid var(--accent);
+  opacity: var(--opacity);
   display: flex;
   flex-direction: column;
 }
