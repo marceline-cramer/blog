@@ -85,32 +85,25 @@ a:active {
   text-align: center;
 }
 
-.toc {
-  margin: 0;
+.buttons {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
+}
+
+.footer, .toc {
   width: 100%;
+  margin-top: 20px;
   padding: 20px 0;
+  border-top: 1px solid var(--accent);
+}
+
+.footer {
+  text-align: center;
+}
+
+.toc {
   border: 1px solid var(--accent);
-}
-
-blockquote {
-  background: solid var(--background);
-  border: 2px dotted var(--accent);
-  padding: 15px;
-}
-
-code {}
-
-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 40px 0;
-}
-
-table, th, td {
-  border: 2px dotted var(--accent);
-  padding: 10px;
 }
 
 .container, .sidebar-left, .sidebar-right {
@@ -128,7 +121,6 @@ table, th, td {
 }
 
 .sidebar-left, .sidebar-right {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 300px;
@@ -150,4 +142,24 @@ table, th, td {
     margin: 5px auto;
     border: 1px solid var(--accent);
   }
+}
+
+blockquote {
+  background: solid var(--background);
+  border: 2px dotted var(--accent);
+  padding: 15px;
+}
+
+code {}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 40px 0;
+}
+
+table, th, td {
+  border: 2px dotted var(--accent);
+  padding: 10px;
 }

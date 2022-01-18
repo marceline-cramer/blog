@@ -2,9 +2,14 @@
 <html lang="{{ lang }}">
   <head>
     <meta charset="UTF-8">
+
     {%- block title -%}
       <title>{{ config.title }}</title>
     {%- endblock title -%}
+
+    {% if config.generate_feed -%}
+      <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+    {% endif -%}
 
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
   </head>
@@ -22,29 +27,35 @@
 
         {{config.description}}
 
-        <img src="https://sadgrl.online/images/homepage/nft.gif">
-        <img src="https://anlucas.neocities.org/penguin.gif">
-        <img src="https://sadgrl.online/images/homepage/noweb32webp.webp">
-        <img src="https://boodlebox.neocities.org/d3.gif">
-        <img src="https://anlucas.neocities.org/lilrib.gif">
+        <div class="buttons">
+          <img src="https://sadgrl.online/images/homepage/nft.gif">
+          <img src="https://anlucas.neocities.org/penguin.gif">
+          <img src="https://sadgrl.online/images/homepage/noweb32webp.webp">
+          <img src="https://boodlebox.neocities.org/d3.gif">
+          <img src="https://anlucas.neocities.org/lilrib.gif">
+        </div>
       {%- endblock sidebar_right -%}
+
+      <div class="footer">
+        {% block footer -%}
+          theme: martian<br>
+          font: <a href="https://madmalik.github.io/mononoki/">mononoki</a><br>
+          © 2022 Marceline Cramer<br>
+        {% endblock footer -%}
+        {% if config.generate_feed -%}
+          <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">Atom feed</a>
+        {% endif -%}
+      </div>
     </div>
 
     <div class="container">
-      {# <div class="header">
-        <a href="{{ config.base_url }}">~~~ {{ config.title }} ~~~</a>
-        <p style="font-size:1.5rem;">
-          {{ config.description }}
-          <br>
-        </p>
-      </div> #}
-
       {%- block main -%}
         <h1>Posts</h1>
         {%- for page in paginator.pages -%}
-          <h2 class="post-title">
+          <h2>
             <a href="{{ page.permalink }}">{{ page.title }}</a>
           </h2>
+          {{ page.description | safe }}
         {%- endfor -%}
       {%- endblock main -%}
     </div>
