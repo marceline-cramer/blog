@@ -17,10 +17,14 @@
 
 body {
   background: url("assets/bg.png");
-  // background-position: bottom;
   background-attachment: fixed;
   font-family: Mononoki;
   color: white;
+}
+
+ol {
+  list-style-position: inside;
+  margin: 0;
 }
 
 a:link {
@@ -41,14 +45,25 @@ a:active {
   text-decoration: underline;
 }
 
-.container {
+.container, .sidebar {
   background: black;
+  border: 3px solid red;
   opacity: 0.9;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+}
+
+.container {
   max-width: 864px;
   min-height: 100vh;
-  border: none;
+  padding: 40px;
   margin: 0 auto;
+}
+
+.sidebar {
+  float: left;
+  width: 300px;
+  padding: 40px 10px;
+  position: sticky;
+  top: 20px;
 }

@@ -4,6 +4,25 @@
   <title>{{ page.title }}</title>
 {%- endblock title -%}
 
+{%- block sidebar -%}
+  <ol type="1">
+    {% for h1 in page.toc %}
+        <li>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+                <ol type="a">
+                    {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ol>
+{%- endblock sidebar -%}
+
 {%- block main -%}
   <article class="post">
     <header>

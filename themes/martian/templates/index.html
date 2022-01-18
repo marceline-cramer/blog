@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
   </head>
   <body>
+    <div class="sidebar">
+      {%- block sidebar -%}
+      {%- endblock sidebar -%}
+    </div>
+
     <div class="container">
       <h1>
         <a href="{{ config.base_url }}">{{ config.title }}</a>
