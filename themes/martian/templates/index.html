@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    {%- block title -%}
+      <title>{{ config.title }}</title>
+    {%- endblock title -%}
+  </head>
+  <body>
+    <h1>
+      <a href="{{ config.base_url }}">{{ config.title }}</a>
+    </h1>
+
+    {%- block main -%}
+      <h1>Posts</h1>
+      {%- for page in paginator.pages -%}
+        <h2 class="post-title">
+          <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h2>
+      {%- endfor -%}
+    {%- endblock main -%}
+  </body>
+</html>

@@ -1,0 +1,11 @@
+name = "martian"
+description = "Marceline's custom Zola theme"
+license = "MIT"
+homepage = "https://gnu.org"
+min_version = "0.8.0"
+
+[extra]
+
+[author]
+name = "Marceline Cramer"
+homepage = "https://github.com/marceline-cramer"

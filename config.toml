@@ -5,7 +5,7 @@ default_language = "en"
 generate_feed = true
 compile_sass = true
 build_search_index = true
-theme = "zerm"
+theme = "martian"
 
 taxonomies = [
     { name = "tags" },
