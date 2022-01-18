@@ -8,15 +8,23 @@
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
   </head>
   <body>
-    <div class="sidebar">
-      {%- block sidebar -%}
-      {%- endblock sidebar -%}
+    <div class="sidebar-left">
+      {%- block sidebar_left -%}
+      {%- endblock sidebar_left -%}
+    </div>
+
+    <div class="sidebar-right">
+      {%- block sidebar_right -%}
+        <img src="https://sadgrl.online/images/homepage/nft.gif">
+        <img src="https://anlucas.neocities.org/penguin.gif">
+        <img src="https://sadgrl.online/images/homepage/noweb32webp.webp">
+      {%- endblock sidebar_right -%}
     </div>
 
     <div class="container">
-      <h1>
-        <a href="{{ config.base_url }}">{{ config.title }}</a>
-      </h1>
+      <p class="header">
+        <a href="{{ config.base_url }}">~~~ {{ config.title }} ~~~</a>
+      </p>
 
       {%- block main -%}
         <h1>Posts</h1>

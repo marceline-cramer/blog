@@ -17,9 +17,21 @@
 
 body {
   background: url("assets/bg.png");
+  background-color: black;
   background-attachment: fixed;
   font-family: Mononoki;
+  font-size: 1rem;
   color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 2em 0 0.5em 0;
+  border-bottom: 1px solid white;
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 ol {
@@ -37,15 +49,37 @@ a:visited {
 
 a:hover {
   color: red;  
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 a:active {
   color: red;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
-.container, .sidebar {
+.header {
+  display: block;
+  font-size: 72px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-bottom: 5px dotted gray;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  background: solid black;
+  border: 2px dotted white;
+  padding: 15px;
+}
+
+code {}
+
+.container, .sidebar-left, .sidebar-right {
   background: black;
   border: 3px solid red;
   opacity: 0.9;
@@ -60,10 +94,26 @@ a:active {
   margin: 0 auto;
 }
 
-.sidebar {
-  float: left;
+.sidebar-left, .sidebar-right {
   width: 300px;
   padding: 40px 10px;
   position: sticky;
   top: 20px;
+}
+
+.sidebar-left {
+  float: left;
+}
+
+.sidebar-right {
+  float: right;
+
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+
+  img {
+    // width: 150px;
+    // margin: 0 auto;
+  }
 }

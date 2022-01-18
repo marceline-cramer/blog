@@ -4,7 +4,7 @@
   <title>{{ page.title }}</title>
 {%- endblock title -%}
 
-{%- block sidebar -%}
+{%- block sidebar_left -%}
   <ol type="1">
     {% for h1 in page.toc %}
         <li>
@@ -21,7 +21,7 @@
         </li>
     {% endfor %}
     </ol>
-{%- endblock sidebar -%}
+{%- endblock sidebar_left -%}
 
 {%- block main -%}
   <article class="post">
