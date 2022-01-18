@@ -4,19 +4,23 @@
     {%- block title -%}
       <title>{{ config.title }}</title>
     {%- endblock title -%}
+
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
   </head>
   <body>
-    <h1>
-      <a href="{{ config.base_url }}">{{ config.title }}</a>
-    </h1>
+    <div class="container">
+      <h1>
+        <a href="{{ config.base_url }}">{{ config.title }}</a>
+      </h1>
 
-    {%- block main -%}
-      <h1>Posts</h1>
-      {%- for page in paginator.pages -%}
-        <h2 class="post-title">
-          <a href="{{ page.permalink }}">{{ page.title }}</a>
-        </h2>
-      {%- endfor -%}
-    {%- endblock main -%}
+      {%- block main -%}
+        <h1>Posts</h1>
+        {%- for page in paginator.pages -%}
+          <h2 class="post-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </h2>
+        {%- endfor -%}
+      {%- endblock main -%}
+    </div>
   </body>
 </html>

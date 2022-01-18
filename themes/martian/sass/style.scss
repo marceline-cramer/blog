@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Mononoki;
+  src: url("assets/mononoki-Regular.ttf") format("ttf"),
+       url("assets/mononoki-Regular.woff2") format("woff2"),
+       url("assets/mononoki-Regular.woff") format("woff");
+}
+
+::selection {
+  color: white;
+  background: red;
+}
+
+::-moz-selection {
+  color: white;
+  background: red;
+}
+
+body {
+  background: url("assets/bg.png");
+  // background-position: bottom;
+  background-attachment: fixed;
+  font-family: Mononoki;
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: grey;
+}
+
+a:hover {
+  color: red;  
+  text-decoration: underline;
+}
+
+a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+.container {
+  background: black;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 864px;
+  min-height: 100vh;
+  border: none;
+  margin: 0 auto;
+}
