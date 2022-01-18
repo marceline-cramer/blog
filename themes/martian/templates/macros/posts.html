@@ -1,0 +1,14 @@
+{% macro meta(page) -%}
+  {% if page.date -%}
+    published {{ page.date }}
+    <br>
+  {% endif -%}
+
+  {% if page.updated -%}
+    last updated {{ page.updated }}
+    <br>
+  {% endif -%}
+
+  {{ page.reading_time }} minute read ({{ page.word_count }} words)
+  <br>
+{% endmacro meta -%}
