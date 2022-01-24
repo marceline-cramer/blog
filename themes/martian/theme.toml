@@ -1,6 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (c) 2022 Marceline Cramer
+
 name = "martian"
 description = "Marceline's custom Zola theme"
-license = "MIT"
+license = "AGPL-3.0"
 homepage = "https://gnu.org"
 min_version = "0.8.0"
 

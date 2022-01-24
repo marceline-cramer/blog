@@ -1,6 +1,8 @@
-{% import "macros/posts.html" as posts -%}
+{# SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (c) 2022 Marceline Cramer #}
 
 {%- extends "index.html" -%}
+
 {%- block main -%}
   <h1>{{ taxonomy.name }}: {{ term.name }}</h1>
   {%- for page in term.pages -%}

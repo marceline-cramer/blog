@@ -1,8 +1,14 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (c) 2022 Marceline Cramer
+
 :root {
   --background-image: url("assets/tib_bg.jpg");
   --background: black;
   --foreground: white;
   --accent: red;
+  --border-color: red;
+  --font: Ubuntu;
+  --code-font: Mononoki;
 }
 
 @font-face {
@@ -10,6 +16,13 @@
   src: url("assets/mononoki-Regular.ttf") format("ttf"),
        url("assets/mononoki-Regular.woff2") format("woff2"),
        url("assets/mononoki-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url("assets/ubuntu.ttf") format("ttf"),
+       url("assets/ubuntu.woff2") format("woff2"),
+       url("assets/ubuntu.woff") format("woff");
 }
 
 ::selection {
@@ -27,7 +40,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   background-attachment: fixed;
-  font-family: Mononoki;
+  font-family: var(--font);
   font-size: 1.2rem;
 }
 
@@ -115,7 +128,7 @@ a:active {
 
 .container, .sidebar-left, .sidebar-right {
   background: var(--background);
-  border: 3px solid var(--accent);
+  border: 3px solid var(--border-color);
   display: flex;
   flex-direction: column;
 }
@@ -157,7 +170,7 @@ blockquote {
 }
 
 code {
-  font-family: Mononoki;
+  font-family: var(--code-font);
 }
 
 table {
