@@ -42,29 +42,26 @@
           {{ directory::list_directory(directory=config.extra.bonus_directory) }}
         {% endif %}
 
-        {% if config.generate_feed -%}
+        {% if config.generate_feed %}
           <p style="text-align: center; margin: 0;">
             <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
               Atom feed
             </a>
           </p>
-        {% endif -%}
+        {% endif %}
 
-        <div class="buttons">
-          <img src="{{ get_url(path='/assets/d3.gif') }}">
-          <br>
-          <img src="{{ get_url(path='/assets/nft.gif') }}">
-          <a href="https://yesterweb.org/no-to-web3/"><img src="{{ get_url(path='/assets/roly-saynotoweb3.gif') }}"></a>
-          <a href="https://yesterweb.org/no-to-web3/"><img src="{{ get_url(path='/assets/noweb32.gif') }}"></a>
-          <img src="{{ get_url(path='/assets/penguin.gif') }}">
-          <a href="{{ get_url(path='agpl-3.0.txt') }}"><img src="{{ get_url(path='/assets/agplv3-88x31.png') }}"></a>
-          <img src="{{ get_url(path='/assets/hash_now.gif') }}">
-          <img src="{{ get_url(path='/assets/internet-roadkill.gif') }}">
-          <img src="{{ get_url(path='/assets/lilrib.gif') }}">
-          <img src="{{ get_url(path='/assets/miku.gif') }}">
-          <img src="{{ get_url(path='/assets/neovim.gif') }}">
-          <img src="{{ get_url(path='/assets/nocookie.gif') }}">
-        </div>
+        {% if config.extra.buttons %}
+          <div class="buttons">
+            {% for button in config.extra.buttons %}
+              {% if button.url %}
+                <a href="{{ get_url(path=button.url) }}"><img src="{{ get_url(path=button.img) }}"></a>
+              {% else %}
+                <img src="{{ get_url(path=button.img) }}">
+              {% endif %}
+              {% if button.br %}<br>{% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
       {%- endblock sidebar_right -%}
 
       <div class="footer">
