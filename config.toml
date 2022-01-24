@@ -14,7 +14,7 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-highlight_theme = "axar"
+highlight_theme = "boron"
 
 [extra]
 # Put all your custom variables here

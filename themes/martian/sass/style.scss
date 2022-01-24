@@ -173,6 +173,12 @@ code {
   font-family: var(--code-font);
 }
 
+pre {
+  border: 2px dotted var(--accent);
+  padding: 20px;
+  margin: 0 40px;
+}
+
 table {
   table-layout: fixed;
   border-collapse: collapse;
