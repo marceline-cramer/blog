@@ -1,0 +1,85 @@
+{# SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (c) 2022 Marceline Cramer #}
+
+{% import "macros/directory.html" as directory %}
+{% import "macros/posts.html" as posts %}
+{% import "macros/taxonomies.html" as taxonomies %}
+
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8">
+
+    {%- block title -%}
+      <title>{{ config.title }}</title>
+    {%- endblock title -%}
+
+    {% if config.generate_feed -%}
+      <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+    {% endif -%}
+
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+  </head>
+  <body>
+    <div class="sidebar-left">
+      {%- block sidebar_left -%}
+      {%- endblock sidebar_left -%}
+    </div>
+
+    <div class="sidebar-right">
+      {%- block sidebar_right -%}
+        <h1 class="post-title">
+          <a href="{{ config.base_url }}">{{ config.title }}</a>
+        </h1>
+
+        {{config.description}}
+
+        {% if config.extra.site_directory %}
+          {{ directory::list_directory(directory=config.extra.site_directory) }}
+        {% endif %}
+
+        {% if config.extra.bonus_directory %}
+          {{ directory::list_directory(directory=config.extra.bonus_directory) }}
+        {% endif %}
+
+        {% if config.generate_feed %}
+          <p style="text-align: center; margin: 0;">
+            <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+              Atom feed
+            </a>
+          </p>
+        {% endif %}
+
+        {% if config.extra.buttons %}
+          <div class="buttons">
+            {% for button in config.extra.buttons %}
+              {% if button.url %}
+                <a href="{{ get_url(path=button.url) }}"><img src="{{ get_url(path=button.img) }}"></a>
+              {% else %}
+                <img src="{{ get_url(path=button.img) }}">
+              {% endif %}
+              {% if button.br %}<br>{% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {%- endblock sidebar_right -%}
+
+      <div class="footer">
+        {% block footer -%}
+          <a href="https://getzola.org">Zola</a> theme: martian<br>
+          fonts: <a href="https://design.ubuntu.com/font/">Ubuntu</a>,
+          <a href="https://madmalik.github.io/mononoki/">mononoki</a><br>
+          license: <a href="{{ get_url(path='agpl-3.0.txt') }}">AGPL-3.0</a><br>
+          Copyright © 2022<br>Marceline Cramer<br>
+        {% endblock footer -%}
+      </div>
+    </div>
+
+    <div class="container">
+      {%- block main -%}
+        <h1>posts</h1>
+        {{ posts::list_pages(list=paginator.pages) }}
+      {%- endblock main -%}
+    </div>
+  </body>
+</html>

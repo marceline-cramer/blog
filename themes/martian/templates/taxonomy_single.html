@@ -1,0 +1,9 @@
+{# SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (c) 2022 Marceline Cramer #}
+
+{%- extends "index.html" -%}
+
+{%- block main -%}
+  <h1>{{ taxonomy.name }}: {{ term.name }}</h1>
+  {{ posts::list_pages(list=term.pages) }}
+{%- endblock main -%}

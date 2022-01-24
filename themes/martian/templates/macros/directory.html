@@ -1,0 +1,12 @@
+{# SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (c) 2022 Marceline Cramer #}
+
+{% macro list_directory(directory) %}
+  <h1 class="post-taxonomy-title">{{ directory.title }}</h1>
+
+  <ul class="taxonomy-list">
+    {% for link in directory.links %}
+      <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+    {% endfor %}
+  </ul>
+{% endmacro list_directory %}

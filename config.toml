@@ -2,10 +2,10 @@ base_url = "https://marceline-cramer.github.io/blog/"
 title = "based blog"
 description="placeholder description"
 default_language = "en"
-generate_feed = true
+generate_feed = false
 compile_sass = true
 build_search_index = true
-theme = "zerm"
+theme = "martian"
 
 taxonomies = [
     { name = "tags" },
@@ -14,7 +14,7 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-highlight_theme = "axar"
+highlight_theme = "boron"
 
 [extra]
 # Put all your custom variables here
@@ -32,3 +32,32 @@ read_more = "show more"
 read_other_posts = "read other posts"
 enable_katex = true
 disqus = { enabled=false, short_name="" }
+
+buttons = [
+    {img="/assets/nft.gif"},
+    {img="/assets/roly-saynotoweb3.gif", url="https://yesterweb.org/no-to-web3"},
+    {img="/assets/noweb32.gif", url="https://yesterweb.org/no-to-web3"},
+    {img="/assets/penguin.gif"},
+    {img="/assets/agplv3-88x31.png", url="/agpl-3.0.txt"},
+    {img="/assets/hash_now.gif"},
+    {img="/assets/internet-roadkill.gif"},
+    {img="/assets/lilrib.gif"},
+    {img="/assets/miku.gif"},
+    {img="/assets/neovim.gif"},
+    {img="/assets/nocookie.gif"},
+]
+
+[extra.site_directory]
+title = "site directory"
+links = [
+    {url="/about/", text="about"},
+]
+
+[extra.bonus_directory]
+title = "similar projects"
+links = [
+    {url="https://tebibyte.media", text="Tebibyte Media"},
+    {url="https://yesterweb.org", text="The Yesterweb"},
+    {url="https://ortusjournal.org", text="Ortus Journal"},
+    {url="https://donotresearch.net", text="Do Not Research"},
+]

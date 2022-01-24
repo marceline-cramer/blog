@@ -1,0 +1,53 @@
+{# SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (c) 2022 Marceline Cramer #}
+
+{%- extends "index.html" -%}
+
+{%- block title %}
+  <title>{{ page.title }}</title>
+{%- endblock title -%}
+
+{%- block sidebar_left -%}
+  <h1 class="post-title">
+    <a href="{{ page.permalink }}">{{ page.title }}</a>
+  </h1>
+  {{ posts::meta(page=page) }}
+
+  {% if page.taxonomies.categories -%}
+    <h1 class="post-taxonomy-title">categories</h1>
+    <ul class="taxonomy-list">
+      {{ taxonomies::list_taxonomies(taxonomies=page.taxonomies.categories, kind="categories") }}
+    </ul>
+  {% endif -%}
+
+  {% if page.taxonomies.tags -%}
+    <h1 class="post-taxonomy-title">tags</h1>
+    <ul class="taxonomy-list">
+      {{ taxonomies::list_taxonomies(taxonomies=page.taxonomies.tags, kind="tags") }}
+    </ul>
+  {% endif -%}
+
+  <h1 class="post-taxonomy-title">table of contents</h1>
+  <ol type="1">
+    {% for h1 in page.toc %}
+        <li>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+                <ol type="a">
+                    {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% endif %}
+        </li>
+    {% endfor %}
+  </ol>
+{%- endblock sidebar_left -%}
+
+{%- block main -%}
+  <article class="post">
+    {{ page.content | safe }}
+  </article>
+{%- endblock main -%}

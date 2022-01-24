@@ -1,0 +1,10 @@
+{# SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (c) 2022 Marceline Cramer #}
+
+{% macro list_taxonomies(taxonomies, kind) -%}
+  {% for cat in taxonomies -%}
+    <li>
+      <a href="{{ get_taxonomy_url(kind=kind, name=cat) }}">{{ cat }}</a>
+    </li>
+  {% endfor -%}
+{% endmacro taxonomy_list -%}
