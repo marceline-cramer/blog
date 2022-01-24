@@ -1,8 +1,9 @@
 {# SPDX-License-Identifier: AGPL-3.0-or-later
    Copyright (c) 2022 Marceline Cramer #}
 
-{% import "macros/posts.html" as posts -%}
-{% import "macros/taxonomies.html" as taxonomies -%}
+{% import "macros/directory.html" as directory %}
+{% import "macros/posts.html" as posts %}
+{% import "macros/taxonomies.html" as taxonomies %}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}">
@@ -33,8 +34,20 @@
 
         {{config.description}}
 
+        {% if config.extra.site_directory %}
+          {{ directory::list_directory(directory=config.extra.site_directory) }}
+        {% endif %}
+
+        {% if config.extra.bonus_directory %}
+          {{ directory::list_directory(directory=config.extra.bonus_directory) }}
+        {% endif %}
+
         {% if config.generate_feed -%}
-          <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">Atom feed</a>
+          <p style="text-align: center; margin: 0;">
+            <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+              Atom feed
+            </a>
+          </p>
         {% endif -%}
 
         <div class="buttons">
@@ -56,8 +69,7 @@
 
       <div class="footer">
         {% block footer -%}
-          theme: martian<br>
-          author: <a href="https://github.com/marceline-cramer">Marceline Cramer</a><br>
+          <a href="https://getzola.org">Zola</a> theme: martian<br>
           fonts: <a href="https://design.ubuntu.com/font/">Ubuntu</a>,
           <a href="https://madmalik.github.io/mononoki/">mononoki</a><br>
           license: <a href="{{ get_url(path='agpl-3.0.txt') }}">AGPL-3.0</a><br>
