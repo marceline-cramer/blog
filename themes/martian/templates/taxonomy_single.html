@@ -1,4 +1,10 @@
+{% import "macros/posts.html" as posts -%}
+
 {%- extends "index.html" -%}
 {%- block main -%}
-  <h1>WIP: single category template</h1>
+  <h1>{{ taxonomy.name }}: {{ term.name }}</h1>
+  {%- for page in term.pages -%}
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    {{ posts::meta(page=page) }}
+  {%- endfor -%}
 {%- endblock main -%}
