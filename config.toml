@@ -50,7 +50,7 @@ buttons = [
 [extra.site_directory]
 title = "site directory"
 links = [
-    {url="/about/", text="about"},
+    {url="about", text="about"},
 ]
 
 [extra.bonus_directory]
