@@ -5,8 +5,5 @@
 
 {%- block main -%}
   <h1>{{ taxonomy.name }}: {{ term.name }}</h1>
-  {%- for page in term.pages -%}
-    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-    {{ posts::meta(page=page) }}
-  {%- endfor -%}
+  {{ posts::list_pages(list=term.pages) }}
 {%- endblock main -%}

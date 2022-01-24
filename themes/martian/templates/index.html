@@ -2,6 +2,7 @@
    Copyright (c) 2022 Marceline Cramer #}
 
 {% import "macros/posts.html" as posts -%}
+{% import "macros/taxonomies.html" as taxonomies -%}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}">
@@ -42,8 +43,8 @@
           <img src="{{ get_url(path='/assets/nft.gif') }}">
           <a href="https://yesterweb.org/no-to-web3/"><img src="{{ get_url(path='/assets/roly-saynotoweb3.gif') }}"></a>
           <a href="https://yesterweb.org/no-to-web3/"><img src="{{ get_url(path='/assets/noweb32.gif') }}"></a>
-          <img src="/assets/penguin.gif">
-          <a href="{{ get_url(path='agpl-3.0.txt') }}"><img src="/assets/agplv3-88x31.png"></a>
+          <img src="{{ get_url(path='/assets/penguin.gif') }}">
+          <a href="{{ get_url(path='agpl-3.0.txt') }}"><img src="{{ get_url(path='/assets/agplv3-88x31.png') }}"></a>
           <img src="{{ get_url(path='/assets/hash_now.gif') }}">
           <img src="{{ get_url(path='/assets/internet-roadkill.gif') }}">
           <img src="{{ get_url(path='/assets/lilrib.gif') }}">
@@ -57,23 +58,18 @@
         {% block footer -%}
           theme: martian<br>
           author: <a href="https://github.com/marceline-cramer">Marceline Cramer</a><br>
-          font: <a href="https://design.ubuntu.com/font/">Ubuntu</a><br>
-          code font: <a href="https://madmalik.github.io/mononoki/">mononoki</a><br>
+          fonts: <a href="https://design.ubuntu.com/font/">Ubuntu</a>,
+          <a href="https://madmalik.github.io/mononoki/">mononoki</a><br>
           license: <a href="{{ get_url(path='agpl-3.0.txt') }}">AGPL-3.0</a><br>
-          © 2022 Marceline Cramer<br>
+          Copyright © 2022<br>Marceline Cramer<br>
         {% endblock footer -%}
       </div>
     </div>
 
     <div class="container">
       {%- block main -%}
-        <h1>Posts</h1>
-        {%- for page in paginator.pages -%}
-          <h2>
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-          </h2>
-          {{ page.description | safe }}
-        {%- endfor -%}
+        <h1>posts</h1>
+        {{ posts::list_pages(list=paginator.pages) }}
       {%- endblock main -%}
     </div>
   </body>
