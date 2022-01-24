@@ -54,7 +54,11 @@
           <div class="buttons">
             {% for button in config.extra.buttons %}
               {% if button.url %}
-                <a href="{{ get_url(path=button.url) }}"><img src="{{ get_url(path=button.img) }}"></a>
+                {% if button.local %}
+                  <a href="{{ get_url(path=button.url) }}"><img src="{{ get_url(path=button.img) }}"></a>
+                {% else %}
+                  <a href="{{ button.url }}"><img src="{{ get_url(path=button.img) }}"></a>
+                {% endif %}
               {% else %}
                 <img src="{{ get_url(path=button.img) }}">
               {% endif %}

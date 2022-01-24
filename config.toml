@@ -38,7 +38,7 @@ buttons = [
     {img="/assets/roly-saynotoweb3.gif", url="https://yesterweb.org/no-to-web3"},
     {img="/assets/noweb32.gif", url="https://yesterweb.org/no-to-web3"},
     {img="/assets/penguin.gif"},
-    {img="/assets/agplv3-88x31.png", url="/agpl-3.0.txt"},
+    {img="/assets/agplv3-88x31.png", url="/agpl-3.0.txt", local=true},
     {img="/assets/hash_now.gif"},
     {img="/assets/internet-roadkill.gif"},
     {img="/assets/lilrib.gif"},
