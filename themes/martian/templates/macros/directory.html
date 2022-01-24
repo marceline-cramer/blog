@@ -6,7 +6,11 @@
 
   <ul class="taxonomy-list">
     {% for link in directory.links %}
-      <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+      {% if link.external %}
+        <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+      {% else %}
+        <li><a href="{{ get_url(path=link.url) }}">{{ link.text }}</a></li>
+      {% endif %}
     {% endfor %}
   </ul>
 {% endmacro list_directory %}

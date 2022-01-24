@@ -56,8 +56,8 @@ links = [
 [extra.bonus_directory]
 title = "similar projects"
 links = [
-    {url="https://tebibyte.media", text="Tebibyte Media"},
-    {url="https://yesterweb.org", text="The Yesterweb"},
-    {url="https://ortusjournal.org", text="Ortus Journal"},
-    {url="https://donotresearch.net", text="Do Not Research"},
+    {url="https://tebibyte.media", text="Tebibyte Media", external=true},
+    {url="https://yesterweb.org", text="The Yesterweb", external=true},
+    {url="https://ortusjournal.org", text="Ortus Journal", external=true},
+    {url="https://donotresearch.net", text="Do Not Research", external=true},
 ]
