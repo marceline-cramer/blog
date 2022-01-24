@@ -1,9 +1,7 @@
-{% macro list_taxonomies(taxonomies, kind, separator) -%}
+{% macro list_taxonomies(taxonomies, kind) -%}
   {% for cat in taxonomies -%}
-	  {% if loop.last -%}
-		  <a href="{{ get_taxonomy_url(kind=kind, name=cat) }}">{{ cat }}</a>
-		{% else -%}
-			<a href="{{ get_taxonomy_url(kind=kind, name=cat) }}">{{ cat }}</a>{{ separator }}
-		{% endif -%}
-	{% endfor -%}
+    <li>
+      <a href="{{ get_taxonomy_url(kind=kind, name=cat) }}">{{ cat }}</a>
+    </li>
+  {% endfor -%}
 {% endmacro taxonomy_list -%}
