@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/about/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/categories/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/categories/programming/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/categories/wu-tang/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/demo/</loc>
+        <lastmod>2019-08-06</lastmod>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/tags/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/tags/demo/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/tags/highlighting/</loc>
+    </url>
+    <url>
+        <loc>https://marceline-cramer.github.io/blog/tags/zola/</loc>
+    </url>
+</urlset>
