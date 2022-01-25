@@ -1,3 +1,6 @@
 [submodule "zerm"]
 	path = themes/zerm
 	url = https://github.com/ejmg/zerm
+[submodule "themes/martian"]
+	path = themes/martian
+	url = https://github.com/marceline-cramer/martian
